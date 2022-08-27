@@ -37,6 +37,11 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
         canvas = Canvas(mCanvasBitmap!!)
     }
 
+    override fun onDraw(canvas: Canvas?) {
+        super.onDraw(canvas)
+        canvas.drawBitmap(mCanvasBitmap!!, 0f, 0f, mCanvasPaint)
+    }
+
 
     internal inner class CustomPath(var color: Int, var brushThickness: Float) : Path() {
 
