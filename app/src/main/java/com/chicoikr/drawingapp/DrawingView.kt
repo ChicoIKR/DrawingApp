@@ -36,8 +36,8 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
         mCanvasBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
         canvas = Canvas(mCanvasBitmap!!)
     }
-
-    override fun onDraw(canvas: Canvas?) {
+    //change canvas to nullable if it fails
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         canvas.drawBitmap(mCanvasBitmap!!, 0f, 0f, mCanvasPaint)
     }
